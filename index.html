@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A friendly, hands-on introduction to HTML, CSS, and JavaScript for absolute beginners."
+    />
+    <meta name="theme-color" content="#f8f7f3" />
+    <title>little web school — learn by making</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="Little Web School home">
+          <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+          <span class="brand-name">little web<span>school</span></span>
+        </a>
+
+        <div class="sidebar-intro">
+          <span class="eyebrow">YOUR LEARNING PATH</span>
+          <h2>One small step at a time.</h2>
+          <p>No experience needed. Just bring your curiosity.</p>
+        </div>
+
+        <div class="sidebar-progress">
+          <div class="progress-copy">
+            <span>Your progress</span>
+            <span id="progress-label">0 of 9</span>
+          </div>
+          <div
+            class="progress-track"
+            role="progressbar"
+            aria-label="Course progress"
+            aria-valuemin="0"
+            aria-valuemax="9"
+            aria-valuenow="0"
+            id="progress-track"
+          >
+            <span id="progress-fill"></span>
+          </div>
+        </div>
+
+        <nav class="lesson-nav" aria-label="Course lessons">
+          <div class="nav-section-heading">
+            <span>THE BASICS</span>
+            <span class="nav-section-count">01 — 03</span>
+          </div>
+          <button class="lesson-link is-active" data-lesson="html-1" type="button" aria-current="step">
+            <span class="lesson-status" data-status="html-1">01</span>
+            <span class="lesson-link-text"><strong>Your first webpage</strong><small>HTML · 5 min</small></span>
+            <span class="lesson-check" aria-hidden="true"></span>
+          </button>
+          <button class="lesson-link" data-lesson="html-2" type="button">
+            <span class="lesson-status" data-status="html-2">02</span>
+            <span class="lesson-link-text"><strong>Words &amp; links</strong><small>HTML · 6 min</small></span>
+            <span class="lesson-check" aria-hidden="true"></span>
+          </button>
+          <button class="lesson-link" data-lesson="html-3" type="button">
+            <span class="lesson-status" data-status="html-3">03</span>
+            <span class="lesson-link-text"><strong>Pictures &amp; lists</strong><small>HTML · 6 min</small></span>
+            <span class="lesson-check" aria-hidden="true"></span>
+          </button>
+
+          <div class="nav-section-heading">
+            <span>MAKE IT PRETTY</span>
+            <span class="nav-section-count">04 — 06</span>
+          </div>
+          <button class="lesson-link" data-lesson="css-1" type="button">
+            <span class="lesson-status" data-status="css-1">04</span>
+            <span class="lesson-link-text"><strong>Dress up your page</strong><small>CSS · 7 min</small></span>
+            <span class="lesson-check" aria-hidden="true"></span>
+          </button>
+          <button class="lesson-link" data-lesson="css-2" type="button">
+            <span class="lesson-status" data-status="css-2">05</span>
+            <span class="lesson-link-text"><strong>Give it some space</strong><small>CSS · 6 min</small></span>
+            <span class="lesson-check" aria-hidden="true"></span>
+          </button>
+          <button class="lesson-link" data-lesson="css-3" type="button">
+            <span class="lesson-status" data-status="css-3">06</span>
+            <span class="lesson-link-text"><strong>Put things in a row</strong><small>CSS · 7 min</small></span>
+            <span class="lesson-check" aria-hidden="true"></span>
+          </button>
+
+          <div class="nav-section-heading">
+            <span>MAKE IT DO THINGS</span>
+            <span class="nav-section-count">07 — 09</span>
+          </div>
+          <button class="lesson-link" data-lesson="js-1" type="button">
+            <span class="lesson-status" data-status="js-1">07</span>
+            <span class="lesson-link-text"><strong>A little JavaScript</strong><small>JavaScript · 7 min</small></span>
+            <span class="lesson-check" aria-hidden="true"></span>
+          </button>
+          <button class="lesson-link" data-lesson="js-2" type="button">
+            <span class="lesson-status" data-status="js-2">08</span>
+            <span class="lesson-link-text"><strong>Listen &amp; respond</strong><small>JavaScript · 7 min</small></span>
+            <span class="lesson-check" aria-hidden="true"></span>
+          </button>
+          <button class="lesson-link" data-lesson="js-3" type="button">
+            <span class="lesson-status" data-status="js-3">09</span>
+            <span class="lesson-link-text"><strong>Save a value</strong><small>JavaScript · 7 min</small></span>
+            <span class="lesson-check" aria-hidden="true"></span>
+          </button>
+        </nav>
+
+        <div class="sidebar-note">
+          <span class="note-sparkle" aria-hidden="true">✳</span>
+          <p><strong>Made for beginners.</strong><br />Take your time. There’s no rush.</p>
+        </div>
+        <span class="sidebar-version">A LITTLE WEB SCHOOL · 2025</span>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobile-menu" type="button" aria-label="Open lesson menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="breadcrumb"><span>YOUR COURSE</span><span class="breadcrumb-slash">/</span><span id="breadcrumb-title">THE BASICS</span></div>
+          <div class="topbar-right">
+            <span class="streak" aria-label="Learning is better at your own pace">🌱 <span>GROW AT YOUR OWN PACE</span></span>
+            <span class="avatar" aria-hidden="true">✳</span>
+          </div>
+        </header>
+
+        <div class="lesson-layout">
+          <article class="lesson-content">
+            <div class="lesson-overline">
+              <span id="lesson-tag" class="tag tag-html">HTML BASICS</span>
+              <span class="lesson-time" id="lesson-time">◷ &nbsp; 5 min</span>
+            </div>
+            <h1 id="lesson-title">Your first<br /><span>webpage.</span></h1>
+            <p class="lesson-lead" id="lesson-lead"></p>
+
+            <div class="welcome-card" id="welcome-card">
+              <div class="welcome-doodle" aria-hidden="true">
+                <span class="doodle-sun">☼</span>
+                <span class="doodle-squiggle">〰</span>
+                <span class="doodle-dot"></span>
+                <span class="doodle-star">✳</span>
+                <span class="doodle-plant">♧</span>
+                <span class="doodle-smile">☺</span>
+              </div>
+              <div class="welcome-card-copy">
+                <span class="welcome-label">A NOTE BEFORE WE BEGIN</span>
+                <h2>You don’t have to<br />know anything yet.</h2>
+                <p>We’ll learn by making small things and seeing what happens. That’s what coding is.</p>
+                <span class="welcome-signoff">Glad you’re here <span>↗</span></span>
+              </div>
+            </div>
+
+            <section class="lesson-section" aria-labelledby="idea-heading">
+              <div class="section-heading">
+                <span class="section-number">01</span>
+                <h2 id="idea-heading">First, the big idea</h2>
+              </div>
+              <div id="lesson-explanation" class="prose"></div>
+              <div class="analogy-card">
+                <span class="analogy-icon" aria-hidden="true">💡</span>
+                <p id="lesson-analogy"></p>
+              </div>
+            </section>
+
+            <section class="lesson-section example-section" aria-labelledby="example-heading">
+              <div class="section-heading">
+                <span class="section-number">02</span>
+                <h2 id="example-heading">Let’s see it in action</h2>
+              </div>
+              <p class="section-description" id="example-description"></p>
+              <div class="playground">
+                <div class="playground-top">
+                  <div class="playground-tabs"><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span><span class="file-tab" id="file-tab">index.html</span></div>
+                  <span class="editor-hint">TRY CHANGING THE CODE ↓</span>
+                </div>
+                <div class="editor-wrap">
+                  <div class="line-numbers" id="line-numbers" aria-hidden="true">1</div>
+                  <label class="visually-hidden" for="code-editor">Editable example code</label>
+                  <textarea id="code-editor" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-describedby="editor-hint"></textarea>
+                </div>
+                <div class="playground-bottom">
+                  <span class="editor-caption" id="editor-hint">Your changes stay right here. Nothing can break.</span>
+                  <button class="run-button" id="run-button" type="button"><span aria-hidden="true">▶</span> Run code</button>
+                </div>
+                <div class="preview-heading"><span>YOUR PREVIEW</span><span id="preview-status">READY WHEN YOU ARE</span></div>
+                <iframe class="preview-frame" id="preview-frame" title="Live preview of your code" sandbox="allow-scripts"></iframe>
+              </div>
+              <div class="try-it-card">
+                <span class="try-it-icon" aria-hidden="true">✳</span>
+                <p><strong>Your turn.</strong> <span id="challenge-text"></span></p>
+              </div>
+            </section>
+
+            <section class="lesson-section quiz-section" aria-labelledby="quiz-heading">
+              <div class="section-heading">
+                <span class="section-number">03</span>
+                <h2 id="quiz-heading">Quick check-in</h2>
+              </div>
+              <p class="section-description" id="quiz-question"></p>
+              <div id="quiz-options" class="quiz-options" role="group" aria-label="Choose your answer"></div>
+              <p id="quiz-feedback" class="quiz-feedback" aria-live="polite"></p>
+            </section>
+
+            <div class="lesson-footer">
+              <button class="mark-done-button" id="mark-done-button" type="button">
+                <span class="done-icon" aria-hidden="true">✓</span>
+                <span id="done-button-label">Mark as complete</span>
+              </button>
+              <button class="next-lesson-button" id="next-lesson-button" type="button">Next little step <span aria-hidden="true">→</span></button>
+            </div>
+            <p class="completion-note" id="completion-note" aria-live="polite"></p>
+          </article>
+
+          <aside class="lesson-aside" aria-label="Lesson notes">
+            <div class="aside-card on-this-page">
+              <span class="aside-eyebrow">IN THIS LESSON</span>
+              <a href="#idea-heading"><span class="aside-link-dot"></span> The big idea</a>
+              <a href="#example-heading"><span class="aside-link-dot"></span> See it in action</a>
+              <a href="#quiz-heading"><span class="aside-link-dot"></span> Quick check-in</a>
+            </div>
+            <div class="aside-card tip-card">
+              <span class="tip-icon" aria-hidden="true">🌼</span>
+              <span class="aside-eyebrow">A LITTLE ENCOURAGEMENT</span>
+              <p id="encouragement-message" aria-live="polite"></p>
+              <button class="encouragement-button" id="another-encouragement" type="button">A little more encouragement <span aria-hidden="true">↗</span></button>
+              <div class="tip-divider"></div>
+              <span class="aside-eyebrow">A TINY TIP</span>
+              <p id="lesson-tip"></p>
+              <span class="tip-footer">One small step at a time.</span>
+            </div>
+            <div class="aside-card glossary-card">
+              <span class="aside-eyebrow">TODAY’S WORD</span>
+              <strong id="glossary-word">HTML</strong>
+              <p id="glossary-definition"></p>
+            </div>
+          </aside>
+        </div>
+        <footer class="page-footer"><span>Made with care, for curious minds.</span><span>YOU’RE DOING GREAT <span aria-hidden="true">✳</span></span></footer>
+      </main>
+    </div>
+    <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+  </body>
+</html>
